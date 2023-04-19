@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-
+    // git hub test
     private PlayerInput playerInput;
     private PlayerInput.OnFootActions onFoot;
 
