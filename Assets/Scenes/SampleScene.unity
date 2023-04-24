@@ -239,7 +239,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 24094166}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5195a8b31e786924792d37146d615c5a, type: 3}
   m_Name: 
@@ -342,6 +342,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 69002445}
+  - component: {fileID: 69002446}
   m_Layer: 0
   m_Name: Enermy
   m_TagString: Untagged
@@ -369,6 +370,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &69002446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69002444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d82dd3027094ef47845c710f2464376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patrolRadius: 10000
+  patrolDelay: 3
+  sightRange: 20
+  player: {fileID: 374140899}
 --- !u!1 &192651150
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,7 +624,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248070748}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5195a8b31e786924792d37146d615c5a, type: 3}
   m_Name: 
@@ -805,6 +822,11 @@ MonoBehaviour:
   cam: {fileID: 1048280806}
   xSensitivity: 30
   ySensitivity: 30
+--- !u!4 &374140899 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1974285536329481219, guid: 7bac5b652700f484f9a640a41cfd770b, type: 3}
+  m_PrefabInstance: {fileID: 4419965734497090776}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &395976752
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,7 +1650,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863214755}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5195a8b31e786924792d37146d615c5a, type: 3}
   m_Name: 
@@ -2145,7 +2167,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1443006387}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5195a8b31e786924792d37146d615c5a, type: 3}
   m_Name: 
@@ -2555,6 +2577,7 @@ GameObject:
   - component: {fileID: 1896444996}
   - component: {fileID: 1896444999}
   - component: {fileID: 1896445000}
+  - component: {fileID: 1896445001}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -2657,7 +2680,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1896444994}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5195a8b31e786924792d37146d615c5a, type: 3}
   m_Name: 
@@ -2686,6 +2709,42 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1896445001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896444994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b82daafa89ac3e942a800dc409ae065e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  navMeshAgent: {fileID: 1896445000}
+  startWaitTime: 4
+  timeToRotate: 2
+  speedWalk: 6
+  speedRun: 9
+  viewRadius: 15
+  viewAngle: 90
+  playerMask:
+    m_Bits: 0
+  obstacleMask:
+    m_Bits: 0
+  meshResolution: 1
+  edgeIterations: 4
+  edgeDistance: 0.5
+  waypoints: []
+  m_CurrentWaypointIndex: 0
+  playerLastPosition: {x: 0, y: 0, z: 0}
+  m_PlayerPosition: {x: 0, y: 0, z: 0}
+  m_WaitTime: 0
+  m_TimeToRotate: 0
+  m_playerInRange: 0
+  m_PlayerNear: 0
+  m_IsPatrol: 0
+  m_CaughtPlayer: 0
 --- !u!1 &1928754127
 GameObject:
   m_ObjectHideFlags: 0
