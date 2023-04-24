@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2760621884504809635}
+  - component: {fileID: 6958337235130216214}
   - component: {fileID: 121585838942439892}
   - component: {fileID: 8121926922274435710}
   - component: {fileID: 4781516028328188320}
   - component: {fileID: 3617316874267547512}
   - component: {fileID: 2066019130430225568}
-  - component: {fileID: 6958337235130216214}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -37,6 +37,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6958337235130216214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4080419375176797713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f44cf6c92c84ad4881739cf64f09e23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  RespawnPosition: {x: 1, y: 1, z: 1}
 --- !u!33 &121585838942439892
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -148,17 +162,3 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &6958337235130216214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4080419375176797713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f44cf6c92c84ad4881739cf64f09e23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 3
-  RespawnPosition: {x: 1, y: 1, z: 1}

@@ -7,7 +7,7 @@ using UnityEngine;
     {
         public GameObject EnemyPrefab;
         public int NumberOfEnemy = 8;
-
+        public int killCount = 0;
         void Start()
         {
 
@@ -19,4 +19,17 @@ using UnityEngine;
             }
 
         }
+
+    // Check if player wins when an enemy is killed
+    public void CheckWinCondition()
+    {
+        Debug.Log("CheckWinCondition running");
+
+        killCount++;
+        if (killCount >= 5)
+        {
+            // Player wins
+            Debug.Log("You Win!");
+        }
     }
+}
