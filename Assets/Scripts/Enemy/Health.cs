@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements.Experimental;
 
 public class Health : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // one shoot will result in 1 damage
     public int health = 3;
+    public Vector3 RespawnPosition;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -15,8 +17,16 @@ public class Health : MonoBehaviour
             health--;
             if (health <= 0)
             {
-                Destroy(gameObject);
+                health = 3;
+                Respawn();
+                //Destroy(gameObject);
             }
         }
     }
+    public void Respawn()
+    {
+        transform.position = RespawnPosition;
+    }
+
+
 }
