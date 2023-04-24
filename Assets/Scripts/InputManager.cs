@@ -5,12 +5,12 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    // git hub test
     private PlayerInput playerInput;
     private PlayerInput.OnFootActions onFoot;
 
     private PlayerMotor motor;
     private PlayerLook look;
+    private Gun gun;
     // Start is called before the first frame update
     void Awake()
     {
@@ -18,6 +18,8 @@ public class InputManager : MonoBehaviour
         onFoot = playerInput.OnFoot;
         motor = GetComponent<PlayerMotor>();
         look = GetComponent<PlayerLook>();
+        gun = GetComponent<Gun>();
+        onFoot.Shoot.started += ctx => gun.ProcessShoot();
         onFoot.Jump.performed += ctx => motor.Jump();
     }
 
