@@ -13,7 +13,12 @@ public class Gun : MonoBehaviour
     private float bulletSpeed = 800f;
 
     // component for the gun sound
+    private AudioSource source;
 
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
 
     public void ProcessShoot()
     {
@@ -24,6 +29,7 @@ public class Gun : MonoBehaviour
         GameObject bullets = Instantiate(bullet, shootingPoint.transform.position, transform.rotation * randomRotation);
         Debug.Log("DATA IS " + bullets.transform.rotation);
         bullets.GetComponent<Rigidbody>().AddForce(randomDirection.normalized * bulletSpeed);
+        source.Play();
         Destroy(bullets, 2);
 
     }
