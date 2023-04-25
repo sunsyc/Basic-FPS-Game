@@ -12,6 +12,12 @@ using UnityEngine;
         public int killCount = 0;
         public int HurtCount = 0;
 
+    public GameObject speedPickupPrefab;
+    public Transform[] spawnPoints;
+    public float spawnInterval = 5f;
+    private float timeSinceLastSpawn;
+
+
     void Start()
         {
 
@@ -22,7 +28,8 @@ using UnityEngine;
                 Instantiate(EnemyPrefab, spawnPosition, Quaternion.identity);
             }
 
-        }
+        SpawnSpeedPickup();
+    }
 
     // Check if player wins when an enemy is killed
     public void CheckWinCondition()
@@ -49,4 +56,23 @@ using UnityEngine;
             Debug.Log("You Loss!");
         }
     }
+
+    void SpawnSpeedPickup()
+    {
+        //int spawnIndex = Random.Range(0, spawnPoints.Length);
+        //Instantiate(speedPickupPrefab, spawnPoints[spawnIndex].position, Quaternion.identity);
+        Vector3 spawnPosition = new Vector3(Random.Range(-1, 3), 0.5f,Random.Range(0, 3));
+        Instantiate(speedPickupPrefab, spawnPosition, Quaternion.identity);
+    }
+
+    void Update()
+    {
+        timeSinceLastSpawn += Time.deltaTime;
+        if (timeSinceLastSpawn >= spawnInterval)
+        {
+            SpawnSpeedPickup();
+            timeSinceLastSpawn = 0f;
+        }
+    }
+
 }

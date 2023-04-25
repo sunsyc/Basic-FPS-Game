@@ -45,4 +45,10 @@ public class PlayerMotor : MonoBehaviour
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -3.0f * gravity);
         }
     }
+
+    public void IncreaseSpeed(float speedBoost)
+    {
+        speed *= speedBoost;
+    }
+
 }

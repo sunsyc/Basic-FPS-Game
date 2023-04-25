@@ -2685,6 +2685,9 @@ MonoBehaviour:
   NumberOfEnemy: 5
   killCount: 0
   HurtCount: 0
+  speedPickupPrefab: {fileID: 8264449776482594489, guid: a7f61cd6c65091d4abb8f86224d011c1, type: 3}
+  spawnPoints: []
+  spawnInterval: 5
 --- !u!4 &1078540950
 Transform:
   m_ObjectHideFlags: 0
