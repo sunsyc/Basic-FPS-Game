@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Author: Yinchu
 public class GameManagerScript : MonoBehaviour
 {
     public GameObject gameOverUI;

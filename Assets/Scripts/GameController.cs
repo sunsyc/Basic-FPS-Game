@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
         public Text killCountText;
         public Text HealthCountText;
 
+    // Author: Yinchu
     public GameObject speedPickupPrefab;
     public Transform[] spawnPoints;
     public float spawnInterval = 5f;
@@ -23,7 +24,8 @@ public class GameController : MonoBehaviour
 
     void Start()
         {
-        SpawnSpeedPickup();
+
+        SpawnSpeedPickup(); // Author: Yinchu
 
         killCountText = GameObject.Find("KillCount").GetComponent<Text>();
         HealthCountText = GameObject.Find("healthCount").GetComponent<Text>();
@@ -61,7 +63,7 @@ public class GameController : MonoBehaviour
         killCount++;
         Debug.Log("Killcount +1");
         killCountText.text = "Kill Count: " + killCount.ToString();
-        if (killCount >= 5)
+        if (killCount >= 15)
         {
             gameManager.gameOver();
             // Player wins
@@ -83,6 +85,7 @@ public class GameController : MonoBehaviour
         }
     }
 
+    // Author: Yinchu
     void SpawnSpeedPickup()
     {
         //int spawnIndex = Random.Range(0, spawnPoints.Length);
@@ -91,6 +94,7 @@ public class GameController : MonoBehaviour
         Instantiate(speedPickupPrefab, spawnPosition, Quaternion.identity);
     }
 
+    // Author: Yinchu
     void Update()
     {
         timeSinceLastSpawn += Time.deltaTime;

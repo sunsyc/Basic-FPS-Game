@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Author: Yinchu
 public class SpeedPickup : MonoBehaviour
 {
     public float speedBoost = 1.5f; // Set the value for how much speed the player gains upon pickup
