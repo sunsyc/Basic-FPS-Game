@@ -30,7 +30,7 @@ public class Gun : MonoBehaviour
         //Debug.Log("DATA IS " + bullets.transform.rotation);
         bullets.GetComponent<Rigidbody>().AddForce(randomDirection.normalized * bulletSpeed);
         source.Play();
-        Destroy(bullets, 2);
+        Destroy(bullets, 1);
 
     }
 

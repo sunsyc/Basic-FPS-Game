@@ -16,15 +16,25 @@ public class Health : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("bullet"))
-            //Debug.Log("HIIIIIIIIIIIIIT!");
         {
+            Debug.Log("HIT target!");
             health--;
             if (health <= 0)
             {
+                Debug.Log("RUN win condition!");
+                gameController.CheckWinCondition();
                 health = 3;
                 Respawn();
-                gameController.CheckWinCondition();
                 //Destroy(gameObject);
+            }
+        }
+
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("HIT PLAYER");
+            {
+                gameController.hurtPlayer();
             }
         }
     }

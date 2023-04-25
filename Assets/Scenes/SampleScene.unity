@@ -1182,6 +1182,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &555046187
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555046178}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.1311269, y: 0.31807214, z: 0.832286}
+  m_Center: {x: -0.19703244, y: 0.022800028, z: 0.27416432}
 --- !u!1 &677855493
 GameObject:
   m_ObjectHideFlags: 0
@@ -1661,6 +1682,7 @@ MonoBehaviour:
   EnemyPrefab: {fileID: 4080419375176797713, guid: ba0ee27d119b6934b8da3ae2b27f8401, type: 3}
   NumberOfEnemy: 5
   killCount: 0
+  HurtCount: 0
 --- !u!4 &1078540950
 Transform:
   m_ObjectHideFlags: 0
@@ -2208,6 +2230,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiGunLightBlue
       objectReference: {fileID: 0}
+    - target: {fileID: 134812, guid: 3c81b162a1af44348b8994f7040514d4, type: 3}
+      propertyPath: m_TagString
+      value: player2
+      objectReference: {fileID: 0}
     - target: {fileID: 449102, guid: 3c81b162a1af44348b8994f7040514d4, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -2272,6 +2298,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 134812, guid: 3c81b162a1af44348b8994f7040514d4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 555046186}
+    - targetCorrespondingSourceObject: {fileID: 134812, guid: 3c81b162a1af44348b8994f7040514d4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 555046187}
   m_SourcePrefab: {fileID: 100100000, guid: 3c81b162a1af44348b8994f7040514d4, type: 3}
 --- !u!1 &1776074666
 GameObject:
@@ -3073,6 +3102,14 @@ PrefabInstance:
     - target: {fileID: 7080648159238964181, guid: 7bac5b652700f484f9a640a41cfd770b, type: 3}
       propertyPath: m_Name
       value: player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7080648159238964181, guid: 7bac5b652700f484f9a640a41cfd770b, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639939054863551792, guid: 7bac5b652700f484f9a640a41cfd770b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9110992198520240855, guid: 7bac5b652700f484f9a640a41cfd770b, type: 3}
       propertyPath: m_LocalPosition.z

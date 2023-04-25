@@ -8,7 +8,9 @@ using UnityEngine;
         public GameObject EnemyPrefab;
         public int NumberOfEnemy = 8;
         public int killCount = 0;
-        void Start()
+        public int HurtCount = 0;
+
+    void Start()
         {
 
             // Respawn enemies
@@ -23,13 +25,24 @@ using UnityEngine;
     // Check if player wins when an enemy is killed
     public void CheckWinCondition()
     {
-        Debug.Log("CheckWinCondition running");
-
         killCount++;
+        Debug.Log("Killcount +1");
         if (killCount >= 5)
         {
             // Player wins
-            Debug.Log("You Win!");
+            Debug.Log("You Win!" + killCount);
+        }
+    }
+
+    public void hurtPlayer()
+    {
+        //Debug.Log("CheckLossing running");
+
+        HurtCount++;
+        if (HurtCount >= 10)
+        {
+            // Player loss
+            Debug.Log("You Loss!");
         }
     }
 }
