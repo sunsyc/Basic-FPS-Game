@@ -39,7 +39,7 @@ using UnityEngine;
 
     public void hurtPlayer()
     {
-        //Debug.Log("CheckLossing running");
+        Debug.Log("Check player hurt");
 
         HurtCount++;
         if (HurtCount >= 5)
