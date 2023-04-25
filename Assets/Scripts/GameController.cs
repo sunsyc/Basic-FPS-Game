@@ -12,14 +12,17 @@ public class GameController : MonoBehaviour
         public int NumberOfEnemy = 5; // numebr of enemy generated per section
         public int killCount = 0;
         public int HurtCount = 0;
-        public Text killCountText; 
+        public Text killCountText;
+        public Text HealthCountText;
 
 
     void Start()
         {
          killCountText = GameObject.Find("KillCount").GetComponent<Text>();
-            // Respawn enemies in main sections
-            for (int i = 0; i < NumberOfEnemy; i++)
+        HealthCountText = GameObject.Find("healthCount").GetComponent<Text>();
+
+        // Respawn enemies in main sections
+        for (int i = 0; i < NumberOfEnemy; i++)
             {
                 Vector3 spawnPosition = new Vector3(Random.Range(-48, 27), 0.5f, Random.Range(-13, 17));
                 Instantiate(EnemyPrefab, spawnPosition, Quaternion.identity);
@@ -61,10 +64,11 @@ public class GameController : MonoBehaviour
 
     public void hurtPlayer()
     {
-        Debug.Log("Check player hurt");
-
         HurtCount++;
-        if (HurtCount >= 5)
+        Debug.Log("Check player hurt");
+        int healthDisplay = 100 - 10 * HurtCount;
+        HealthCountText.text = " Health Count:  " + healthDisplay.ToString();
+        if (HurtCount >= 10)
         {
             // Player loss
             gameManager.gameOver();
