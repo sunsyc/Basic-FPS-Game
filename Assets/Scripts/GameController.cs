@@ -5,6 +5,8 @@ using UnityEngine;
 
     public class GameController : MonoBehaviour
     {
+        private bool isWin;
+        public GameManagerScript gameManager;
         public GameObject EnemyPrefab;
         public int NumberOfEnemy = 8;
         public int killCount = 0;
@@ -29,6 +31,7 @@ using UnityEngine;
         Debug.Log("Killcount +1");
         if (killCount >= 5)
         {
+            gameManager.gameOver();
             // Player wins
             Debug.Log("You Win!" + killCount);
         }
