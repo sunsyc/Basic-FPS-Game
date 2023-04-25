@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+// Author: Feifei
 public class Health : MonoBehaviour
 {
     // one shoot will result in 1 damage
@@ -53,7 +53,8 @@ public class Health : MonoBehaviour
     }
     public void Respawn()
     {
-        transform.position = RespawnPosition;
+        Vector3 spawnPosition = new Vector3(Random.Range(-48, 27), 0.5f, Random.Range(-13, 17));
+        transform.position = spawnPosition;
     }
 
     private void Update()

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+// Author: Yinchu and Feifei
 public class InputManager : MonoBehaviour
 {
     private PlayerInput playerInput;
