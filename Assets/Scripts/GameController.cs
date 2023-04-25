@@ -42,9 +42,10 @@ using UnityEngine;
         //Debug.Log("CheckLossing running");
 
         HurtCount++;
-        if (HurtCount >= 10)
+        if (HurtCount >= 5)
         {
             // Player loss
+            gameManager.gameOver();
             Debug.Log("You Loss!");
         }
     }
