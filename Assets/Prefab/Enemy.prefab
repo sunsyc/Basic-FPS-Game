@@ -160,6 +160,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   RespawnPosition: {x: 1, y: 1, z: 1}
+  shakeMagnitude: 0.8
+  shakeDuration: 1
 --- !u!33 &121585838942439892
 MeshFilter:
   m_ObjectHideFlags: 0

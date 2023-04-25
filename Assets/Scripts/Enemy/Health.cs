@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements.Experimental;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -12,11 +12,18 @@ public class Health : MonoBehaviour
 
     // add player hurt sound
     private AudioSource source;
+    public float shakeMagnitude = 0.1f;
+    public float shakeDuration = 0.2f;
+    private Vector3 originalPosition;
+    private float shakeTimer = 0f;
+    //public RawImage bloodEffect;  // Assign in the Inspector
 
     void Start()
     {
+        //bloodEffect.enabled = false;
         gameController = FindObjectOfType<GameController>();
         source = GetComponent<AudioSource>();
+        originalPosition = Camera.main.transform.localPosition;
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -38,8 +45,9 @@ public class Health : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("HIT PLAYER");
-                source.Play();
-                gameController.hurtPlayer();
+            source.Play();
+            ShakeCamera();
+            gameController.hurtPlayer();
            
         }
     }
@@ -48,5 +56,26 @@ public class Health : MonoBehaviour
         transform.position = RespawnPosition;
     }
 
-
+    private void Update()
+    {
+        if (shakeTimer > 0)
+        {
+            Camera.main.transform.localPosition = originalPosition + Random.insideUnitSphere * shakeMagnitude;
+            shakeTimer -= Time.deltaTime;
+        }
+        else
+        {
+            shakeTimer = 0f;
+            Camera.main.transform.localPosition = originalPosition;
+        }
+    }
+    public void ShakeCamera()
+    {
+        shakeTimer = shakeDuration;
+    }
+/*    public void ShowBloodEffect()
+    {
+        bloodEffect.enabled = true;
+        Invoke("HideBloodEffect", 0.2f);  // Hide blood effect after 0.2 seconds
+    }*/
 }
