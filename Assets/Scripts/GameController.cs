@@ -15,10 +15,17 @@ public class GameController : MonoBehaviour
         public Text killCountText;
         public Text HealthCountText;
 
+    public GameObject speedPickupPrefab;
+    public Transform[] spawnPoints;
+    public float spawnInterval = 5f;
+    private float timeSinceLastSpawn;
+
 
     void Start()
         {
-         killCountText = GameObject.Find("KillCount").GetComponent<Text>();
+        SpawnSpeedPickup();
+
+        killCountText = GameObject.Find("KillCount").GetComponent<Text>();
         HealthCountText = GameObject.Find("healthCount").GetComponent<Text>();
 
         // Respawn enemies in main sections
@@ -73,6 +80,24 @@ public class GameController : MonoBehaviour
             // Player loss
             gameManager.gameOver();
             Debug.Log("You Loss!");
+        }
+    }
+
+    void SpawnSpeedPickup()
+    {
+        //int spawnIndex = Random.Range(0, spawnPoints.Length);
+        //Instantiate(speedPickupPrefab, spawnPoints[spawnIndex].position, Quaternion.identity);
+        Vector3 spawnPosition = new Vector3(Random.Range(-1, 3), 0.5f, Random.Range(0, 3));
+        Instantiate(speedPickupPrefab, spawnPosition, Quaternion.identity);
+    }
+
+    void Update()
+    {
+        timeSinceLastSpawn += Time.deltaTime;
+        if (timeSinceLastSpawn >= spawnInterval)
+        {
+            SpawnSpeedPickup();
+            timeSinceLastSpawn = 0f;
         }
     }
 }
