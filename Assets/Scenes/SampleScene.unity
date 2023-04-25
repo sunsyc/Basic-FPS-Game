@@ -1352,7 +1352,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Health Count: 0'
+  m_Text: 'Health Count: 100'
 --- !u!222 &457853140
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2595,7 +2595,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Kill Count: 0'
+  m_Text: Eliminate 15 enemies to achieve victory!
 --- !u!222 &902583498
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3093,6 +3093,7 @@ MonoBehaviour:
   killCount: 0
   HurtCount: 0
   killCountText: {fileID: 0}
+  HealthCountText: {fileID: 0}
 --- !u!4 &1078540950
 Transform:
   m_ObjectHideFlags: 0

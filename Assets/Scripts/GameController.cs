@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
         private bool isWin;
         public GameManagerScript gameManager;
         public GameObject EnemyPrefab;
-        public int NumberOfEnemy = 5; // numebr of enemy generated per section
+        public int NumberOfEnemy = 8; // numebr of enemy generated per section
         public int killCount = 0;
         public int HurtCount = 0;
         public Text killCountText;
@@ -54,7 +54,7 @@ public class GameController : MonoBehaviour
         killCount++;
         Debug.Log("Killcount +1");
         killCountText.text = "Kill Count: " + killCount.ToString();
-        if (killCount >= 5)
+        if (killCount >= 15)
         {
             gameManager.gameOver();
             // Player wins

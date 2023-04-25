@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f44cf6c92c84ad4881739cf64f09e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 3
   RespawnPosition: {x: 1, y: 1, z: 1}
   shakeMagnitude: 0.8
   shakeDuration: 1
