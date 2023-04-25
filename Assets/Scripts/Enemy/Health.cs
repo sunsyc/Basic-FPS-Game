@@ -9,9 +9,14 @@ public class Health : MonoBehaviour
     public int health = 3;
     public Vector3 RespawnPosition;
     private GameController gameController;
+
+    // add player hurt sound
+    private AudioSource source;
+
     void Start()
     {
         gameController = FindObjectOfType<GameController>();
+        source = GetComponent<AudioSource>();
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -33,9 +38,9 @@ public class Health : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("HIT PLAYER");
-            {
+                source.Play();
                 gameController.hurtPlayer();
-            }
+           
         }
     }
     public void Respawn()
